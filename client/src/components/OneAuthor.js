@@ -6,6 +6,7 @@ const OneAuthor = (props) => {
     const {authorList, setAuthorList} = props;
     const {id} = useParams();
     const [authorName, setAuthorName] = useState({});
+    const [liked, setLiked] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -42,6 +43,8 @@ const OneAuthor = (props) => {
             <p>Skill One: {authorName.skillOne}</p>
             <p>Skill Two: {authorName.skillTwo}</p>
             <p>Skill Three: {authorName.skillThree}</p>
+            <div><button onClick={(e) => {setLiked((likeStatus) => !likeStatus)}}>Like: {liked ? "💖":"🤍"} </button></div>
+            
         </div>
     )
 }

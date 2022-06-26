@@ -47,9 +47,9 @@ const Update = (props) => {
             console.log(res);
             navigate("/");
         })
-        .catch(err=>{
-            console.log(err.response.data.errors)
-            const errorResponse = err.response.data.errors;
+        .catch((err)=>{
+            console.log(err.response.data.err.errors)
+            const errorResponse = err.response.data.err.errors;
             const errorArr = [];
             for (const key of Object.keys(errorResponse)) {
                 errorArr.push(errorResponse[key].message)
@@ -65,6 +65,7 @@ const Update = (props) => {
             </div>
             <form onSubmit={updateAuthor}>
             {errors.map((err, index) => <p key={index}>{err}</p>)}
+            {errors.name}
             <h2>Edit a Pet</h2>
             <label>Name</label>
             <input type="text" name="name" 

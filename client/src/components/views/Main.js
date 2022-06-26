@@ -7,12 +7,7 @@ import AuthorList from "../AuthorList";
 
 const Main = (props) => {
     const [authorList, setAuthorList] = useState([]);
-    const [name, setName] = useState("");
-    const [type, setType] = useState("");
-    const [description, setDescription] = useState("");
-    const [skillOne, setSkillOne] = useState("");
-    const [skillTwo, setSkillTwo] = useState("");
-    const [skillThree, setSkillThree] = useState("");
+    
 
 
     const removeFromDom = authorId => {
